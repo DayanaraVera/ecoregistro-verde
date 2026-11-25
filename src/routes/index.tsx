@@ -48,7 +48,8 @@ function Index() {
     <div id="inicio" className="min-h-screen text-foreground">
       <div className="starfield" aria-hidden="true" />
 
-      <header className="mx-auto max-w-6xl px-5 pt-10 pb-6">
+      <header className="mx-auto grid max-w-6xl items-center gap-8 px-5 pt-10 pb-10 md:grid-cols-2">
+        <div className="min-w-0">
         <div className="flex min-w-0 items-center gap-4">
           <Logo />
           <div className="min-w-0">
@@ -63,10 +64,16 @@ function Index() {
           (3.º de Bachillerato Técnico en Informática — 3.º BTI, 20/11/2026), acompañado de una
           visualización interactiva desarrollada en Visual Basic.
         </p>
+        </div>
+        <div className="flex justify-center" aria-label="Globo terráqueo">
+          <div className="globe w-64 sm:w-80" role="img" aria-label="Globo terráqueo girando">
+            <div className="globe-map" style={{ maskImage: `url(${mapa.url})`, WebkitMaskImage: `url(${mapa.url})` }} />
+          </div>
+        </div>
       </header>
 
       <main className="mx-auto max-w-6xl space-y-10 px-5 pb-16">
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div>
           <section className="glass flex flex-col justify-center gap-5 p-6 sm:p-8" aria-labelledby="vis-title">
             <h2 id="vis-title" className="font-display text-xl text-foreground sm:text-2xl">Visualización en Visual Basic</h2>
             <p className="text-muted-foreground">Abre la visualización interactiva del proyecto EcoRegistro.</p>
@@ -81,14 +88,6 @@ function Index() {
             )}
           </section>
 
-          <aside className="glass flex items-center justify-center p-6" aria-label="Mapamundi">
-            <div
-              role="img"
-              aria-label="Mapamundi"
-              className="world-map aspect-[2/1] w-full"
-              style={{ maskImage: `url(${mapa.url})`, WebkitMaskImage: `url(${mapa.url})` }}
-            />
-          </aside>
         </div>
 
         <section className="glass p-4 sm:p-8" aria-labelledby="info-title">

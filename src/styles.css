@@ -141,3 +141,9 @@
 .world-map { background: var(--secondary); mask-size: contain; mask-repeat: no-repeat; mask-position: center; -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center; animation: float 7s ease-in-out infinite; filter: drop-shadow(0 0 10px color-mix(in oklab, var(--secondary) 50%, transparent)); }
 @keyframes float { 0%,100% { transform: translateY(0); opacity: .85 } 50% { transform: translateY(-8px); opacity: 1 } }
 @media (prefers-reduced-motion: reduce) { .world-map, .starfield::before, .starfield::after { animation: none; } }
+
+.globe { position: relative; border-radius: 9999px; overflow: hidden; aspect-ratio: 1; background: radial-gradient(circle at 35% 30%, color-mix(in oklab, var(--primary) 45%, var(--background)), var(--background) 75%); border: 1px solid var(--border); box-shadow: var(--glow-strong), inset -20px -20px 50px color-mix(in oklab, var(--background) 85%, transparent); }
+.globe-map { position: absolute; inset: 0; background: var(--secondary); mask-size: 200% 100%; -webkit-mask-size: 200% 100%; mask-repeat: repeat-x; -webkit-mask-repeat: repeat-x; animation: spin-globe 4s linear infinite; }
+.globe::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: radial-gradient(circle at 30% 25%, color-mix(in oklab, var(--foreground) 25%, transparent), transparent 45%); pointer-events: none; }
+@keyframes spin-globe { from { mask-position: 0 0; -webkit-mask-position: 0 0; } to { mask-position: -200% 0; -webkit-mask-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .globe-map { animation: none; } }
