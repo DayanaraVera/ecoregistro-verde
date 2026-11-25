@@ -91,7 +91,7 @@ function Index() {
         </div>
 
         <section className="glass p-4 sm:p-8" aria-labelledby="info-title">
-          <h2 id="info-title" className="mb-6 text-center font-display text-xl text-primary sm:text-2xl">Infografía</h2>
+          <h2 id="info-title" className="mb-6 text-center font-display text-xl text-primary sm:text-2xl">Información Adicional</h2>
           <figure className="mx-auto max-w-2xl">
             <img src={infografia.url} alt="Infografía EcoRegistro: Tecnología para cuidar el medio ambiente" className="w-full rounded-xl border border-border" loading="lazy" />
           </figure>
