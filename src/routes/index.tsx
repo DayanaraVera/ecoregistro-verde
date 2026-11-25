@@ -60,9 +60,11 @@ function Index() {
           </div>
         </div>
         <p className="mt-6 max-w-3xl text-muted-foreground">
-          EcoRegistro es el proyecto del equipo de Dayanara Vera, Jessica Carpio y Tifanny Cano
-          (3.º de Bachillerato Técnico en Informática — 3.º BTI, 20/11/2026), acompañado de una
-          visualización interactiva desarrollada en Visual Basic.
+          Cada material reciclable tiene una segunda oportunidad, pero solo si sabemos dónde termina.
+          Nuestra aplicación en Visual Basic 6.0 registra materiales reciclables y rastrea su destino
+          real para revelar qué se recupera, qué se pierde en el camino y cuál es recuperable. Para más
+          información da click en "VER VISUALIZACIÓN" para registrarte en nuestro programa y saber
+          cuántos Kg haz conseguido reciclar
         </p>
         </div>
         <div className="flex justify-center" aria-label="Globo terráqueo">
