@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowRight, Check, Copy, Home, Info, Leaf, Monitor, Recycle } from "lucide-react";
+import { Check, Copy, Home, Info, Leaf, Monitor, Recycle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import infografia from "@/assets/infografia.jpg.asset.json";
 import intro from "@/assets/ecoregistro-intro.png.asset.json";
@@ -81,9 +81,6 @@ function Index() {
             <p className="mb-3 font-heading text-2xl font-bold sm:text-3xl">Bienvenido a</p>
             <h1 className="intro-title font-display text-4xl font-extrabold text-secondary sm:text-6xl">EcoRegistro</h1>
             <p className="mt-6 max-w-sm border-l-2 border-secondary pl-4 font-heading text-lg italic text-foreground sm:text-xl">Una plataforma para <span className="text-secondary">explorar el mundo a través de la tecnología.</span></p>
-            <Button type="button" onClick={() => document.getElementById("visualizacion")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" })} className="btn-glow mt-8 h-auto max-w-full rounded-full px-6 py-4 font-display text-sm sm:text-base">
-              <Monitor aria-hidden="true" />VER VISUALIZACIÓN<ArrowRight aria-hidden="true" />
-            </Button>
           </div>
           <div className="intro-highlights grid gap-4 pb-8 sm:grid-cols-3">
             <div className="intro-highlight flex items-center gap-4 p-5"><Leaf className="h-10 w-10 shrink-0 text-secondary" /><div><h2 className="mb-2 font-heading font-bold text-secondary">Nuestro Objetivo</h2><p className="text-sm leading-5 text-foreground">Combinar tecnología y conocimiento para un mundo más informado.</p></div></div>
