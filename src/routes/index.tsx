@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import infografia from "@/assets/infografia.jpg.asset.json";
 import mapa from "@/assets/mapamundi.svg.asset.json";
@@ -34,6 +35,17 @@ function Logo() {
 
 function Index() {
   const [notice, setNotice] = useState(false);
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copying" | "copied" | "error">("idle");
+
+  const copyPath = async () => {
+    setCopyStatus("copying");
+    try {
+      await navigator.clipboard.writeText(EXE_PATH);
+      setCopyStatus("copied");
+    } catch {
+      setCopyStatus("error");
+    }
+  };
 
   const openVisualization = () => {
     setNotice(true);
@@ -84,10 +96,20 @@ function Index() {
               VER VISUALIZACIÓN
             </Button>
             {notice && (
-              <span role="alert" className="rounded-xl border border-secondary/50 bg-muted p-4 text-sm text-foreground">
+              <div role="alert" className="rounded-xl border border-secondary/50 bg-muted p-4 text-sm text-foreground">
                 Por seguridad, el navegador no permite ejecutar archivos .exe locales desde esta página.
                 Para abrir EcoRegistro, pega esta ruta en el Explorador de archivos de Windows y pulsa Enter: <code className="break-all text-secondary">{EXE_PATH}</code>
-              </span>
+                <div className="mt-3 flex flex-wrap items-center gap-3">
+                  <Button type="button" variant="outline" onClick={copyPath} disabled={copyStatus === "copying"}>
+                    {copyStatus === "copied" ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+                    Copiar ruta
+                  </Button>
+                  <span role="status" aria-live="polite" className={copyStatus === "error" ? "text-destructive" : "text-secondary"}>
+                    {copyStatus === "copied" && "Ruta copiada al portapapeles."}
+                    {copyStatus === "error" && "No se pudo copiar la ruta. Selecciónala y cópiala manualmente."}
+                  </span>
+                </div>
+              </div>
             )}
           </section>
 
