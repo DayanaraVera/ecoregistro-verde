@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import infografia from "@/assets/infografia.jpg.asset.json";
 import mapa from "@/assets/mapamundi.svg.asset.json";
 
-const EXE_PATH = "C:\\Users\\ferna\\OneDrive\\Escritorio\\DAYANARAVERA";
-const EXE_URL = "file:///C:/Users/ferna/OneDrive/Escritorio/DAYANARAVERA";
+const EXE_PATH = "C:\\Users\\ferna\\OneDrive\\Escritorio\\DAYANARAVERA\\EcoRegistroD.exe";
+const EXE_URL = "file:///C:/Users/ferna/OneDrive/Escritorio/DAYANARAVERA/EcoRegistroD.exe";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -79,13 +80,13 @@ function Index() {
           <section className="glass flex flex-col justify-center gap-5 p-6 sm:p-8" aria-labelledby="vis-title">
             <h2 id="vis-title" className="font-display text-xl text-foreground sm:text-2xl">Visualización en Visual Basic</h2>
             <p className="text-muted-foreground">Abre la visualización interactiva del proyecto EcoRegistro.</p>
-            <button type="button" onClick={openVisualization} className="btn-glow w-full rounded-xl px-6 py-4 text-base font-semibold tracking-widest sm:w-auto sm:self-start">
+            <Button type="button" onClick={openVisualization} className="btn-glow h-auto w-full rounded-xl px-6 py-4 text-base font-semibold tracking-widest sm:w-auto sm:self-start">
               VER VISUALIZACIÓN
-            </button>
+            </Button>
             {notice && (
               <span role="alert" className="rounded-xl border border-secondary/50 bg-muted p-4 text-sm text-foreground">
-                Si la visualización no se abre, el recurso no está disponible desde el navegador.
-                Ábrela directamente en el equipo desde: <code className="break-all text-secondary">{EXE_PATH}</code>
+                Por seguridad, el navegador no permite ejecutar archivos .exe locales desde esta página.
+                Para abrir EcoRegistro, pega esta ruta en el Explorador de archivos de Windows y pulsa Enter: <code className="break-all text-secondary">{EXE_PATH}</code>
               </span>
             )}
           </section>
