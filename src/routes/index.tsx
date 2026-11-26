@@ -7,7 +7,7 @@ import intro from "@/assets/ecoregistro-intro.png.asset.json";
 import mapa from "@/assets/mapamundi.svg.asset.json";
 
 const EXE_PATH = "C:\\Users\\ferna\\OneDrive\\Escritorio\\DAYANARAVERA\\EcoRegistroD.exe";
-const EXE_URL = "file:///C:/Users/ferna/OneDrive/Escritorio/DAYANARAVERA/EcoRegistroD.exe";
+const APP_URL = "ecoregistro://abrir";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -50,12 +50,7 @@ function Index() {
 
   const openVisualization = () => {
     setNotice(true);
-    try {
-      const w = window.open(EXE_URL, "_blank");
-      if (!w) setNotice(true);
-    } catch {
-      setNotice(true);
-    }
+    window.location.href = APP_URL;
   };
 
   return (
@@ -101,7 +96,7 @@ function Index() {
             Nuestra aplicación en Visual Basic 6.0 registra materiales reciclables y rastrea su destino
             real para revelar qué se recupera, qué se pierde en el camino y cuál es recuperable. Para más
             información da click en "VER VISUALIZACIÓN" para registrarte en nuestro programa y saber
-            cuántos Kg haz conseguido reciclar
+            cuántos kg has conseguido reciclar
           </p>
           </div>
           <div className="flex justify-center">
@@ -118,10 +113,11 @@ function Index() {
             <Button type="button" onClick={openVisualization} className="btn-glow h-auto w-full rounded-xl px-6 py-4 text-base font-semibold tracking-widest sm:w-auto sm:self-start">
               VER VISUALIZACIÓN
             </Button>
+            <a href="/EcoRegistroD.zip" download className="text-sm text-secondary underline">Descargar el programa (.zip)</a>
             {notice && (
               <div role="alert" className="rounded-xl border border-secondary/50 bg-muted p-4 text-sm text-foreground">
-                Por seguridad, el navegador no permite ejecutar archivos .exe locales desde esta página.
-                Para abrir EcoRegistro, pega esta ruta en el Explorador de archivos de Windows y pulsa Enter: <code className="break-all text-secondary">{EXE_PATH}</code>
+                Si el navegador pregunta, permite abrir el programa. Si no se abre,
+                para iniciar EcoRegistro, pega esta ruta en el Explorador de archivos de Windows y pulsa Enter: <code className="break-all text-secondary">{EXE_PATH}</code>
                 <div className="mt-3 flex flex-wrap items-center gap-3">
                   <Button type="button" variant="outline" onClick={copyPath} disabled={copyStatus === "copying"}>
                     {copyStatus === "copied" ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
