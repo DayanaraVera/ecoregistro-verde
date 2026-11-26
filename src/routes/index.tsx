@@ -4,6 +4,7 @@ import { ArrowRight, Check, Copy, Home, Info, Leaf, Monitor, Recycle } from "luc
 import { Button } from "@/components/ui/button";
 import infografia from "@/assets/infografia.jpg.asset.json";
 import intro from "@/assets/ecoregistro-intro.png.asset.json";
+import mapa from "@/assets/mapamundi.svg.asset.json";
 
 const EXE_PATH = "C:\\Users\\ferna\\OneDrive\\Escritorio\\DAYANARAVERA\\EcoRegistroD.exe";
 const EXE_URL = "file:///C:/Users/ferna/OneDrive/Escritorio/DAYANARAVERA/EcoRegistroD.exe";
@@ -94,6 +95,8 @@ function Index() {
 
       <main className="mx-auto max-w-6xl space-y-12 px-5 py-12 sm:px-8 sm:py-16">
         <section id="proyecto" className="scroll-mt-6 border-b border-border pb-12" aria-labelledby="project-title">
+          <div className="grid items-center gap-8 md:grid-cols-[minmax(0,1fr)_320px]">
+          <div className="min-w-0">
           <h2 id="project-title" className="font-display text-3xl font-extrabold text-secondary">EcoRegistro</h2>
           <p className="mt-3 font-heading text-lg text-foreground">Tecnología para cuidar el medio ambiente</p>
           <p className="mt-6 max-w-4xl leading-8 text-muted-foreground">
@@ -103,6 +106,13 @@ function Index() {
             información da click en "VER VISUALIZACIÓN" para registrarte en nuestro programa y saber
             cuántos Kg haz conseguido reciclar
           </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="globe w-64 sm:w-80" role="img" aria-label="Globo terráqueo girando">
+              <div className="globe-map" style={{ maskImage: `url(${mapa.url})`, WebkitMaskImage: `url(${mapa.url})` }} />
+            </div>
+          </div>
+          </div>
         </section>
 
           <section id="visualizacion" className="flex scroll-mt-6 flex-col justify-center gap-5 border-b border-border pb-12" aria-labelledby="vis-title">

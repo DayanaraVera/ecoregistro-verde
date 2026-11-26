@@ -2,3 +2,4 @@
 - [x] Mover el contenido actual a la segunda sección sin repetir el planeta.
 - [x] Reemplazar los textos de la introducción por los de la imagen, conservando EcoRegistro y el planeta.
 - [x] Comprobar la página en computadora y celular y la copia de la ruta.
+- [x] Añadir y comprobar el mapamundi giratorio en la segunda sección.
